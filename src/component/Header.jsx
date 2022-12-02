@@ -22,8 +22,13 @@ const Header = () => {
             <Form.Item name={"url"} label="URL">
                 <Input placeholder="Enter Url"/>
             </Form.Item>
-            <Form.Item name={"method"} label="Sender Organization">
-                <Input placeholder="Organization Name"/>
+            <Form.Item name={"method"}>
+                <Select placeholder={"Method"}>
+                    {["GET", "POST"].map(value => {
+                        return <Select.Option value={value}
+                                              key={value}>{value}</Select.Option>
+                    })}
+                </Select>
             </Form.Item>
             <Form.List name={"request"}>
                 {(fields, {add, remove}) => (
